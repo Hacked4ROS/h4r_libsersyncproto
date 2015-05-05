@@ -8,9 +8,8 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
    INCLUDE_DIRS src/SerSyncProto/include
    LIBRARIES h4r_libsersyncproto
+   CFG_EXTRAS h4r_libsersyncproto-extras.cmake
 )
-
-
 
 ###########
 ## Build ##
@@ -35,7 +34,6 @@ add_library(h4r_libsersyncproto
 #############
 ## Install ##
 #############
-
 
 # Mark executables and/or libraries for installation
 install(TARGETS h4r_libsersyncproto
