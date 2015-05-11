@@ -5,6 +5,9 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
+
+find_package(Boost REQUIRED COMPONENTS system)
+
 catkin_package(
    INCLUDE_DIRS src/SerSyncProto/include
    LIBRARIES h4r_libsersyncproto
@@ -23,13 +26,12 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Add std99 definition
-add_definitions(-std=c99)
-
 ## Declare library
+set_source_files_properties(src/SerSyncProto/src/sersyncproto.c PROPERTIES LANGUAGE CXX )
 add_library(h4r_libsersyncproto
    src/SerSyncProto/src/sersyncproto.c
 )
+
 
 #############
 ## Install ##
